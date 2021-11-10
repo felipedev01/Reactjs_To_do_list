@@ -20,7 +20,8 @@ export function TaskList() {
 
   function handleCreateNewTask() {
 
-    let id=1;
+    if(newTaskTitle!=""){
+      let id=1;
     if(tasks.length >= 1){
       id=tasks[tasks.length-1].id+1
     }
@@ -30,6 +31,8 @@ export function TaskList() {
     setTasks([...tasks,currentTask])
 
     setNewTaskTitle("")
+    }
+    
     // Crie uma nova task com um id random, não permita criar caso o título seja vazio.
   }
 
